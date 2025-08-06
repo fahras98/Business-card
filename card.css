@@ -1,0 +1,231 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at center, #f8f6f0 0%, #e8e4d9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .card-container {
+            perspective: 1200px;
+        }
+
+        .business-card {
+            width: 380px;
+            height: 240px;
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 50%, #fdfdfd 100%);
+            border-radius: 20px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.15),
+                0 5px 15px rgba(0,0,0,0.08),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(184, 134, 11, 0.1);
+        }
+
+        .business-card:hover {
+            transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+            box-shadow: 
+                0 35px 70px rgba(0,0,0,0.2),
+                0 10px 25px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        .gold-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #B8860B, #DAA520, #FFD700, #B8860B) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .card-content {
+            padding: 35px 40px;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-section {
+            margin-bottom: 30px;
+            position: relative;
+             font-family: 'Poppins', serif;
+        }
+
+        .name {
+            font-family: 'Poppins', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            color: #B8860B;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            color: #8b7355;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 25px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            color: #5a5a5a;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #B8860B;
+            transform: translateX(2px);
+        }
+
+        .contact-icon {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            color: #B8860B;
+            flex-shrink: 0;
+        }
+
+        .decorative-element {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, rgba(184, 134, 11, 0.02) 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .logo-text {
+            font-family: 'Poppins', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #B8860B;
+            letter-spacing: 1px;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 8px;
+            color: rgba(230, 170, 18, 0.925);
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .gold-line {
+            position: absolute;
+            bottom: 80px;
+            left: 40px;
+            width: 45px;
+            height: 2px;
+            background: linear-gradient(90deg, #B8860B 0%, #DAA520 50%, #FFD700 100%);
+            border-radius: 1px;
+        }
+
+        /* Luxury texture overlay */
+        .card-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(184, 134, 11, 0.02) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.015) 0%, transparent 30%);
+            pointer-events: none;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .business-card {
+                width: 3.5in;
+                height: 2in;
+                box-shadow: none;
+                transform: none !important;
+                margin: 0;
+                border: 1px solid #B8860B;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .business-card {
+                width: 340px;
+                height: 220px;
+            }
+            
+            .card-content {
+                padding: 30px 35px;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+            
+            .decorative-element {
+                width: 50px;
+                height: 50px;
+                right: 35px;
+                top: 25px;
+            }
+        }
+  
