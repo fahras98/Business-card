@@ -8,7 +8,6 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
             background: radial-gradient(circle at center, #f8f6f0 0%, #e8e4d9 100%);
             min-height: 100vh;
             display: flex;
@@ -16,15 +15,18 @@
             justify-content: center;
             padding: 40px;
         }
+   
+
 
         .card-container {
             perspective: 1200px;
         }
 
         .business-card {
+
             width: 380px;
             height: 240px;
-            background: linear-gradient(145deg, #ffffff 0%, #fefefe 50%, #fdfdfd 100%);
+            background: linear-gradient(45deg, black, grey);
             border-radius: 20px;
             padding: 0;
             position: relative;
@@ -70,23 +72,24 @@
         .header-section {
             margin-bottom: 30px;
             position: relative;
-             font-family: 'Poppins', serif;
+            font-family: "Mozilla Text", sans-serif;
+
         }
 
         .name {
-            font-family: 'Poppins', serif;
             font-size: 32px;
-            font-weight: 700;
-            color: #2c2c2c;
+            font-weight: 300;
+            color: white;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
             line-height: 1.1;
+            
         }
 
         .title {
-            font-family: 'Poppins', sans-serif;
+            font-family: "Mozilla Text", sans-serif;   
             font-size: 13px;
-            color: #B8860B;
+            color: whitesmoke;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -94,11 +97,11 @@
         }
 
         .subtitle {
-            font-family: 'Poppins', sans-serif;
-            font-size: 11px;
-            color: #8b7355;
-            font-weight: 400;
-            font-style: italic;
+        font-family: "Mozilla Text", sans-serif;
+        font-size: 11px;
+        color: whitesmoke;
+        font-weight: 400;
+        
         }
 
         .contact-section {
@@ -113,7 +116,7 @@
             align-items: center;
             font-family: 'Inter', sans-serif;
             font-size: 11px;
-            color: #5a5a5a;
+            color: wheat;
             font-weight: 400;
             transition: all 0.3s ease;
         }
