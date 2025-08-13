@@ -1,5 +1,4 @@
-
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
         * {
             margin: 0;
@@ -8,22 +7,156 @@
         }
 
         body {
-            background: radial-gradient(circle at center, #f8f6f0 0%, #e8e4d9 100%);
+            background: linear-gradient(45deg, black, grey);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 40px;
+            position: relative;
+            overflow: hidden;
+            
+            /* Business-themed animated background */
+            background: 
+                /* Circuit board pattern */
+                linear-gradient(90deg, transparent 48%, rgba(184, 134, 11, 0.05) 49%, rgba(184, 134, 11, 0.05) 51%, transparent 52%),
+                linear-gradient(0deg, transparent 48%, rgba(255, 215, 0, 0.03) 49%, rgba(255, 215, 0, 0.03) 51%, transparent 52%),
+                /* Data flow lines */
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(184, 134, 11, 0.02) 10px, rgba(184, 134, 11, 0.02) 11px),
+                /* Base gradient */
+                linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #000000 100%);
+            
+            background-size: 
+                80px 80px,
+                60px 60px,
+                40px 40px,
+                100% 100%;
+            
+            animation: 
+                dataFlow 20s linear infinite,
+                circuitPulse 8s ease-in-out infinite alternate;
         }
-   
 
+        /* Network nodes and connections */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            
+            /* Network nodes pattern */
+            background-image: 
+                /* Connection points */
+                radial-gradient(circle at 15% 25%, rgba(184, 134, 11, 0.4) 1px, rgba(184, 134, 11, 0.1) 2px, transparent 3px),
+                radial-gradient(circle at 85% 15%, rgba(255, 215, 0, 0.3) 1px, rgba(255, 215, 0, 0.08) 2px, transparent 3px),
+                radial-gradient(circle at 25% 75%, rgba(184, 134, 11, 0.3) 1px, rgba(184, 134, 11, 0.06) 2px, transparent 3px),
+                radial-gradient(circle at 75% 85%, rgba(255, 215, 0, 0.4) 1px, rgba(255, 215, 0, 0.1) 2px, transparent 3px),
+                radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.2) 1px, transparent 2px),
+                /* Connection lines */
+                linear-gradient(27deg, transparent 45%, rgba(184, 134, 11, 0.08) 49%, rgba(184, 134, 11, 0.08) 51%, transparent 55%),
+                linear-gradient(63deg, transparent 45%, rgba(255, 215, 0, 0.06) 49%, rgba(255, 215, 0, 0.06) 51%, transparent 55%);
+            
+            background-size: 
+                400px 300px,
+                350px 400px,
+                450px 350px,
+                300px 450px,
+                200px 200px,
+                300px 300px,
+                250px 250px;
+            
+            animation: 
+                networkPulse 15s ease-in-out infinite,
+                dataTransfer 25s linear infinite;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            
+            /* SEO/Analytics visualization */
+            background: 
+                /* Performance graphs */
+                linear-gradient(180deg, transparent 60%, rgba(184, 134, 11, 0.02) 65%, rgba(184, 134, 11, 0.06) 70%, rgba(184, 134, 11, 0.04) 75%, rgba(184, 134, 11, 0.08) 80%, rgba(184, 134, 11, 0.02) 85%, transparent 90%),
+                linear-gradient(180deg, transparent 40%, rgba(255, 215, 0, 0.01) 45%, rgba(255, 215, 0, 0.04) 50%, rgba(255, 215, 0, 0.02) 55%, rgba(255, 215, 0, 0.06) 60%, rgba(255, 215, 0, 0.01) 65%, transparent 70%);
+            
+            background-size: 
+                120px 100vh,
+                180px 100vh;
+            
+            animation: analyticsFlow 18s ease-in-out infinite alternate;
+        }
+
+        /* Business-focused Animation Keyframes */
+        @keyframes dataFlow {
+            0% {
+                background-position: 0 0, 0 0, 0 0, 0 0;
+            }
+            100% {
+                background-position: 80px 80px, -60px -60px, 40px 40px, 0 0;
+            }
+        }
+
+        @keyframes circuitPulse {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes networkPulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes dataTransfer {
+            0% {
+                background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+            }
+            100% {
+                background-position: 400px -300px, -350px 400px, 450px -350px, -300px 450px, 200px -200px, 300px -300px, -250px 250px;
+            }
+        }
+
+        @keyframes analyticsFlow {
+            0% {
+                background-position: 0 0, 60px 0;
+                opacity: 0.4;
+            }
+            50% {
+                background-position: 40px 0, 100px 0;
+                opacity: 0.7;
+            }
+            100% {
+                background-position: 80px 0, 140px 0;
+                opacity: 0.5;
+            }
+        }
 
         .card-container {
             perspective: 1200px;
+            z-index: 10;
         }
 
         .business-card {
-
             width: 380px;
             height: 240px;
             background: linear-gradient(45deg, black, grey);
@@ -73,7 +206,6 @@
             margin-bottom: 30px;
             position: relative;
             font-family: "Mozilla Text", sans-serif;
-
         }
 
         .name {
@@ -83,7 +215,6 @@
             margin-bottom: 8px;
             letter-spacing: -0.5px;
             line-height: 1.1;
-            
         }
 
         .title {
@@ -97,11 +228,10 @@
         }
 
         .subtitle {
-        font-family: "Mozilla Text", sans-serif;
-        font-size: 11px;
-        color: whitesmoke;
-        font-weight: 400;
-        
+            font-family: "Mozilla Text", sans-serif;
+            font-size: 11px;
+            color: whitesmoke;
+            font-weight: 400;
         }
 
         .contact-section {
@@ -192,11 +322,26 @@
             pointer-events: none;
         }
 
+        /* QR Code styling */
+        #qrcode {
+            display: inline-block;
+            padding: 5px;
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+        }
+
         /* Print optimization */
         @media print {
             body {
-                background: white;
+                background: white !important;
                 padding: 0;
+                animation: none !important;
+            }
+            
+            body::before,
+            body::after {
+                display: none;
             }
             
             .business-card {
@@ -231,4 +376,3 @@
                 top: 25px;
             }
         }
-  
